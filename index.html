@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Krishna Bal Bhatt | Portfolio</title>
+<meta name="description" content="Krishna Bal Bhatt, B.Tech CSE student at NIT Uttarakhand. Full-stack developer and machine learning intern.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#F6F7F4; --surface:#FFFFFF; --ink:#14202B; --muted:#52606C; --line:#D8DDD6;
+  --accent:#1F6F68; --accent-ink:#FFFFFF; --amber:#B8730A; --ridge:#1F6F68;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#0E1721; --surface:#152230; --ink:#E9EEF1; --muted:#9AAAB6; --line:#243545;
+    --accent:#4FB3A9; --accent-ink:#0E1721; --amber:#F0B04A; --ridge:#4FB3A9;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#0E1721; --surface:#152230; --ink:#E9EEF1; --muted:#9AAAB6; --line:#243545;
+  --accent:#4FB3A9; --accent-ink:#0E1721; --amber:#F0B04A; --ridge:#4FB3A9;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+.brand{font-family:var(--serif);font-weight:700;font-size:19px;text-decoration:none}
+nav{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{padding:8px 10px;text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;white-space:nowrap;border-radius:6px}
+nav a:hover{color:var(--ink)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
+.theme:hover{border-color:var(--accent)}
+
+/* hero */
+.hero{padding:72px 0 0;position:relative;overflow:hidden}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,8.5vw,92px);line-height:1;letter-spacing:-0.02em;margin:0 0 20px;max-width:12ch}
+.lead{font-size:clamp(19px,2.4vw,23px);max-width:34em;margin:0 0 28px;color:var(--muted)}
+.lead strong{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-top:1px solid var(--line);margin:0 0 -1px}
+.facts div{padding:18px 20px 22px 0}
+.facts dt{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1.1;margin:0 0 4px}
+.facts dd{margin:0;color:var(--muted);font-size:15px}
+.ridge{display:block;width:100%;height:auto;margin-top:8px}
+.ridge .far{fill:var(--ridge);opacity:.16}
+.ridge .mid{fill:var(--ridge);opacity:.32}
+.ridge .near{fill:var(--ridge);opacity:.7}
+.ridge .sun{fill:var(--amber)}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:32px}
+h2{font-family:var(--serif);font-weight:700;font-size:28px;line-height:1.2;margin:0}
+h3{font-size:19px;margin:0;line-height:1.3}
+.meta{color:var(--muted);font-size:15px}
+.entry+.entry{margin-top:36px}
+.entry-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;margin-bottom:6px}
+.entry p{margin:6px 0 0}
+ul{margin:10px 0 0;padding-left:1.15em}
+li{margin:6px 0}
+.stack{margin:10px 0 0;color:var(--muted);font-size:15px}
+.tag{display:inline-block;font-size:13px;font-weight:600;color:var(--amber);border:1px solid var(--amber);border-radius:999px;padding:1px 10px;margin-left:8px;vertical-align:2px}
+.feature{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:22px 24px}
+.skills dt{font-weight:600;margin-top:14px}
+.skills dt:first-child{margin-top:0}
+.skills dd{margin:2px 0 0;color:var(--muted)}
+.honors li{margin:0 0 14px;list-style:none}
+.honors{padding:0;margin:0}
+.honors b{display:block}
+.contact-list{list-style:none;padding:0;margin:14px 0 0}
+.contact-list li{margin:8px 0}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+@media (max-width:760px){
+  body{font-size:16px}
+  .hero{padding-top:44px}
+  .row{grid-template-columns:1fr;gap:18px}
+  section{padding:44px 0}
+  .brand{font-size:17px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Krishna Bal Bhatt</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch between light and dark theme">Theme</button>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1>Krishna Bal Bhatt</h1>
+    <p class="lead">Computer science student at NIT Uttarakhand. I build <strong>full-stack web apps</strong> and <strong>machine learning models</strong>, and I’m looking for a software or ML internship.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:krishnabalbhatt1@gmail.com">Email me</a>
+      <a class="btn ghost" href="#projects">See my projects</a>
+      <a class="btn ghost" href="https://github.com/krishna-bal" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/krishna-bal-bhatt/" rel="noopener">LinkedIn</a>
+    </div>
+    <dl class="facts">
+      <div><dt>9.95 / 10</dt><dd>CGPA, top of the CSE batch</dd></div>
+      <div><dt>Second Runner-Up</dt><dd>AI Hackathon, AI Bootcamp 2026</dd></div>
+      <div><dt>Finalist</dt><dd>Frontend Battle 2.0, IIT Bhubaneswar</dd></div>
+      <div><dt>ML intern</dt><dd>Fox Trading, June to July 2026</dd></div>
+    </dl>
+  </div>
+  <svg class="ridge" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true">
+    <circle class="sun" cx="1130" cy="62" r="26"/>
+    <path class="far" d="M0 170V96L110 52L200 92L330 28L450 98L560 60L690 112L820 40L950 104L1060 70L1190 118L1320 56L1440 100V170Z"/>
+    <path class="mid" d="M0 170V122L140 82L250 118L400 66L540 124L690 90L850 132L1000 96L1150 134L1300 92L1440 124V170Z"/>
+    <path class="near" d="M0 170V146L170 118L300 144L470 108L620 146L790 120L960 150L1120 126L1290 150L1440 132V170Z"/>
+  </svg>
+</div>
+
+<section id="about">
+  <div class="wrap row">
+    <h2>About</h2>
+    <div>
+      <p style="margin-top:0">I study Computer Science and Engineering at NIT Uttarakhand, Srinagar (Garhwal), where I hold a 9.95 CGPA and rank first in my batch. I like problems where clean data structures and a solid backend decide whether something works.</p>
+      <p>This summer I interned in machine learning and built models for healthcare and transport data. Alongside that, I build web applications with Node.js, Express and MongoDB, and practise algorithms in C++ on LeetCode and TakeUForward.</p>
+      <p>Education: B.Tech in Computer Science and Engineering, August 2024 to August 2028 (expected). Coursework includes data structures and algorithms, object-oriented programming, discrete mathematics and software engineering.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap row">
+    <h2>Experience</h2>
+    <div>
+      <div class="entry">
+        <div class="entry-head"><h3>Machine Learning Intern, Fox Trading</h3><span class="meta">June 2026 to July 2026</span></div>
+        <div class="meta">1Stop internship program</div>
+        <ul>
+          <li>Developed a diabetes prediction model on healthcare data using Python, NumPy, Pandas and Seaborn, covering data cleaning, analysis, training and evaluation.</li>
+          <li>Built a bike-sharing demand prediction model on transport data to forecast rental demand.</li>
+          <li>Implemented a computer vision model for human action detection.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap row">
+    <h2>Projects</h2>
+    <div>
+      <div class="feature entry">
+        <div class="entry-head"><h3>Voyage Vault<span class="tag">In progress</span></h3><span class="meta">June 2025 to present</span></div>
+        <p>A full-stack travel listing platform where users browse, create, edit and delete listings.</p>
+        <ul>
+          <li>RESTful APIs for full CRUD operations, using the MVC model and a modular Express Router.</li>
+          <li>Joi and Mongoose schema validation, so bad data never reaches the database.</li>
+          <li>Authentication and authorization with Passport.js and Express Sessions, plus flash messages for instant feedback.</li>
+          <li>Cloudinary for image storage and delivery, and dynamic maps for location.</li>
+        </ul>
+        <p class="stack">Built with Node.js, Express, MongoDB, Passport.js, Cloudinary, HTML and CSS.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head"><h3>Machine learning projects</h3><span class="meta">May to July 2026</span></div>
+        <ul>
+          <li><b>Diabetes prediction</b> from patient health data.</li>
+          <li><b>Bike-sharing demand prediction</b> from transport data.</li>
+          <li><b>Human action detection</b> using computer vision.</li>
+        </ul>
+        <p class="stack">Built with Python, NumPy, Pandas, Matplotlib and Seaborn.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head"><h3>Smart Library Management System</h3><span class="meta">January to May 2025</span></div>
+        <p>A terminal-based Java application that automates library resource tracking.</p>
+        <ul>
+          <li>HashMap for O(1) average-time lookups and ArrayList for ordered storage.</li>
+          <li>Abstraction and encapsulation keep the code modular and easy to maintain.</li>
+        </ul>
+        <p class="stack">Built with Java, OOP and the Collections framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap row">
+    <h2>Skills</h2>
+    <dl class="skills" style="margin:0">
+      <dt>Languages</dt><dd>C++, Java, Python, JavaScript (ES6+), SQL, HTML5, CSS3</dd>
+      <dt>Web development</dt><dd>Node.js, Express.js, RESTful APIs, Passport.js, MVC architecture</dd>
+      <dt>Machine learning and data</dt><dd>NumPy, Pandas, Matplotlib, Seaborn, computer vision, statistics and probability</dd>
+      <dt>Databases and cloud</dt><dd>MongoDB, Mongoose, MySQL, Cloudinary</dd>
+      <dt>Tools and fundamentals</dt><dd>Git, GitHub, Postman, data structures and algorithms, OOP, problem solving</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="recognition">
+  <div class="wrap row">
+    <h2>Recognition</h2>
+    <ul class="honors">
+      <li><b>Second Runner-Up, AI Hackathon</b><span class="meta">AI Bootcamp 2026, organised by NIT Uttarakhand with Pahadi AI. Team PahadiDivyadhrishti.</span></li>
+      <li><b>Finalist, Frontend Battle 2.0</b><span class="meta">Organised by WebnD, the Web Development and Design Society of IIT Bhubaneswar, June 2025.</span></li>
+      <li><b>Winner, intra-year coding competition</b><span class="meta">NIT Uttarakhand.</span></li>
+      <li><b>Top of the CSE batch</b><span class="meta">9.95 CGPA at NIT Uttarakhand.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap row">
+    <h2>Contact</h2>
+    <div>
+      <p style="margin-top:0">I’m open to software engineering and machine learning internships. The quickest way to reach me is email.</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:krishnabalbhatt1@gmail.com">krishnabalbhatt1@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/krishna-bal-bhatt/" rel="noopener">linkedin.com/in/krishna-bal-bhatt</a></li>
+        <li>GitHub: <a href="https://github.com/krishna-bal" rel="noopener">github.com/krishna-bal</a></li>
+        <li>Location: Srinagar (Garhwal), Uttarakhand, India</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Krishna Bal Bhatt, B.Tech CSE, NIT Uttarakhand</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('kb-theme'); if(s==='light'||s==='dark'){root.setAttribute('data-theme',s);}}catch(e){}
+  function current(){
+    var t=root.getAttribute('data-theme');
+    if(t) return t;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light';
+  }
+  btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('kb-theme',next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
